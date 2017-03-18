@@ -1,0 +1,53 @@
+{
+  "name": "koala.web.ui",
+  "version": "0.1.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "test": "karma start",
+    "unit-test": "rimraf dist_unit_test && webpack --config config/webpack.test.js && jasmine JASMINE_CONFIG_PATH=test/config/jasmine.json",
+    "build": "rimraf dist && webpack --config config/webpack2.prod.js --progress --profile --bail",
+    "postbuild": "uglifyjs dist/app.js --screw-ie8 --compress --mangle --output dist/app.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nandowalter@bitbucket.org/koalait/koala.web.ui.git"
+  },
+  "author": "Fernando Walter Gagni <nandowalter@gmail.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/koalait/koala.web.ui#readme",
+  "dependencies": {
+    "@angular/common": "~2.1.1",
+    "@angular/compiler": "~2.1.1",
+    "@angular/core": "~2.1.1",
+    "@angular/forms": "~2.1.1",
+    "@angular/http": "~2.1.1",
+    "@angular/platform-browser": "~2.1.1",
+    "@angular/platform-browser-dynamic": "~2.1.1",
+    "@angular/router": "~3.1.1",
+    "angular": "^1.5.8",
+    "angular2-template-loader": "^0.6.2",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.25"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^7.0.5",
+    "angular-route": "^1.5.9",
+    "awesome-typescript-loader": "^2.2.4",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0",
+    "jasmine": "^2.5.2",
+    "raw-loader": "^0.5.1",
+    "reflect-metadata": "^0.1.9",
+    "rimraf": "^2.5.2",
+    "typescript": "2.1.1",
+    "uglify-js": "^2.7.5",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0",
+    "webpack-merge": "^0.14.0"
+  }
+}
