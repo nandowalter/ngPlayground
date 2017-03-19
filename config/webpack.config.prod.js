@@ -5,6 +5,7 @@ var helpers = require('./helpers');
 var UglifyWebpack = webpack.optimize.UglifyJsPlugin;
 var AotPlugin = require('@ngtools/webpack').AotPlugin;
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+var CompressionPlugin = require("compression-webpack-plugin");
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
@@ -71,6 +72,13 @@ module.exports = {
           keep_fnames: true
       },
       minimize:true
+    }),
+    new CompressionPlugin({
+        asset: "[path].gz[query]",
+        algorithm: "gzip",
+        test: /\.(js|html)$/,
+        threshold: 10240,
+        minRatio: 0.8
     })/*,
     new BundleAnalyzerPlugin()*/
   ]
