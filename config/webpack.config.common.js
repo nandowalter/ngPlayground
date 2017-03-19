@@ -6,7 +6,6 @@ const UglifyWebpack = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
   entry: {
-    'vendor': './src/vendor.ts',
     'app': './src/main.ts'
   },
 
@@ -51,10 +50,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor']
-    }),
-
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
