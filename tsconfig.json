@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
     "allowUnreachableCode": true,
@@ -10,6 +10,16 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "lib": ["es6", "dom"]
-  }
+    "lib": ["es2015", "dom"]
+  },
+  "files": [
+    "src/app/app.module.ts",
+    "src/main.ts"
+  ],
+
+  "angularCompilerOptions": {
+   "genDir": "aot",
+   "skipMetadataEmit" : true,
+   "entryModule": "src/app/app.module#AppModule"
+ }
 }
