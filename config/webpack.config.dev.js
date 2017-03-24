@@ -15,6 +15,7 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin('[name].[hash].css'),
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
